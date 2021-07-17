@@ -156,4 +156,101 @@ public class Main {
 
     }
 
+    public static void pattern17() {
+        Scanner scn = new Scanner(System.in);
+
+        int n = scn.nextInt();
+
+        int star = 1;
+        int space = n / 2;
+        for (int i = 1; i <= n; i++) {
+
+            for (int j = 1; j <= space; j++) {
+                if (i == n / 2 + 1) {
+                    System.out.print("*\t");
+                } else {
+                    System.out.print("\t");
+                }
+            }
+
+            for (int j = 1; j <= star; j++) {
+                System.out.print("*\t");
+            }
+            System.out.println();
+            if (i <= n / 2) {
+                star++;
+            } else {
+                star--;
+            }
+        }
+
+    }
+
+    public static void pattern18() {
+        Scanner scn = new Scanner(System.in);
+
+        int n = scn.nextInt();
+
+        int star = n;
+        int space = 0;
+
+        for (int i = 1; i <= n; i++) {
+
+            for (int j = 1; j <= space; j++) {
+                System.out.print("\t");
+            }
+
+            for (int j = 1; j <= star; j++) {
+
+                if (i >= 2 && i <= n / 2) {
+                    if (j == 1 || j == star) {
+                        System.out.print("*\t");
+                    } else {
+                        System.out.print("\t");
+                    }
+                } else {
+                    System.out.print("*\t");
+                }
+
+            }
+            System.out.println();
+            if (i <= n / 2) {
+                space++;
+                star = star - 2;
+            } else {
+                space--;
+                star = star + 2;
+            }
+
+        }
+
+    }
+
+    public static void pattern19() {
+        Scanner scn = new Scanner(System.in);
+    
+        int n  = scn.nextInt();
+        
+        for(int i=1;i<=n;i++){
+            
+            for(int j=1;j<=n;j++){
+                if(i == n/2+1 || j == n/2+1){
+                    System.out.print("*\t");
+                }else if(i==1 && j>=1 && j<=n/2){
+                    System.out.print("*\t");
+                }else if(j==n && i<=n/2){
+                    System.out.print("*\t");
+                }else if(i==n && j > n/2){
+                    System.out.print("*\t");
+                }else if(j==1 && i>n/2){
+                    System.out.print("*\t");
+                }else{
+                    System.out.print("\t");
+                }
+            }
+            System.out.println();
+        }
+    
+     }
+
 }
